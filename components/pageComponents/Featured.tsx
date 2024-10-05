@@ -24,27 +24,6 @@ const books = [
 		image:
 			'https://images.unsplash.com/photo-1726999884199-f17b04eeb5f5?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
 	},
-	{
-		id: 3,
-		title: 'To Kill a Mockingbird',
-		author: 'Harper Lee',
-		image:
-			'https://images.unsplash.com/photo-1726999884199-f17b04eeb5f5?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-	},
-	{
-		id: 4,
-		title: 'Pride and Prejudice',
-		author: 'Jane Austen',
-		image:
-			'https://images.unsplash.com/photo-1726999884199-f17b04eeb5f5?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-	},
-	{
-		id: 5,
-		title: 'The Catcher in the Rye',
-		author: 'J.D. Salinger',
-		image:
-			'https://images.unsplash.com/photo-1726999884199-f17b04eeb5f5?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-	},
 ];
 
 export function Featured() {
