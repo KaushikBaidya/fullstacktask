@@ -1,28 +1,31 @@
 import Image from 'next/image';
 import React from 'react';
-import { FiSearch, FiLogIn } from 'react-icons/fi';
+import { FiSearch, FiLogIn, FiCheckCircle } from 'react-icons/fi';
 import LogoPic from '../../assets/logo.png';
 import MobileLogoPic from '../../assets/mobile-logo.png';
+import Link from 'next/link';
 
 const Navbar: React.FC = () => {
 	return (
 		<nav className='p-4 shadow-sm bg-white fixed top-0 w-full z-50'>
 			<div className='container mx-auto flex justify-between items-center p-2'>
 				<div className='text-xl font-bold'>
-					<Image
-						src={LogoPic}
-						width={200}
-						height={100}
-						className='hidden md:block w-36'
-						alt='Libaria'
-					/>
-					<Image
-						src={MobileLogoPic}
-						width={200}
-						height={100}
-						className=' md:hidden w-10'
-						alt='Libaria'
-					/>
+					<Link href='/'>
+						<Image
+							src={LogoPic}
+							width={200}
+							height={100}
+							className='hidden md:block w-36'
+							alt='Libaria'
+						/>
+						<Image
+							src={MobileLogoPic}
+							width={200}
+							height={100}
+							className=' md:hidden w-10'
+							alt='Libaria'
+						/>
+					</Link>
 				</div>
 
 				<div className='hidden md:flex flex-1 justify-center'>
@@ -36,11 +39,17 @@ const Navbar: React.FC = () => {
 					</div>
 				</div>
 
-				<div>
+				<div className='flex space-x-2'>
 					<button className='bg-black text-white px-4 py-2 rounded-md flex items-center hover:bg-slate-600'>
 						<FiLogIn className='mr-2' />
 						Login
 					</button>
+					<Link href='addbook'>
+						<button className='bg-black text-white px-4 py-2 rounded-md flex items-center hover:bg-slate-600'>
+							<FiCheckCircle className='mr-2' />
+							Add Book
+						</button>
+					</Link>
 				</div>
 			</div>
 
