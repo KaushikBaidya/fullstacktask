@@ -1,6 +1,25 @@
 import Image from 'next/image';
 import { connectToMongoDB } from '@/lib/db';
 import Library from '@/models/libraryModel';
+import {
+	Table,
+	TableBody,
+	TableCell,
+	TableHead,
+	TableHeader,
+	TableRow,
+} from '@/components/ui/table';
+import {
+	DropdownMenu,
+	DropdownMenuCheckboxItem,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuLabel,
+	DropdownMenuSeparator,
+	DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
+import { MoreHorizontal } from 'lucide-react';
 
 async function fetchBooks() {
 	await connectToMongoDB();
@@ -14,35 +33,66 @@ export default async function FeaturedBooks() {
 	return (
 		<section className='container mx-auto my-8 py-28'>
 			<h2 className='text-3xl lg:text-5xl font-bold mb-4 text-center'>
-				All Books
+				Book List
 			</h2>
 
-			<div className='max-w-4xl mx-auto'>
-				<div className='flex flex-wrap justify-center items-center'>
-					{books.map((book) => (
-						<div key={book._id} className='pl-1 md:basis-1/2 lg:basis-1/3'>
-							<div className='p-2'>
-								<div className='card'>
-									<div className='card-content flex flex-col items-center justify-center p-4'>
-										<Image
-											src={book.image}
-											alt={book.title}
-											width={150}
-											height={200}
-											className='rounded-md mb-4'
-										/>
-										<h3 className='text-lg font-semibold text-center'>
-											{book.title}
-										</h3>
-										<p className='text-sm text-gray-600 text-center'>
-											{book.author}
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					))}
-				</div>
+			<div className='w-full mx-auto mt-10'>
+				<Table>
+					<TableHeader>
+						<TableRow>
+							<TableHead>Title</TableHead>
+							<TableHead>Author</TableHead>
+							<TableHead>Published Date</TableHead>
+							<TableHead>Genres</TableHead>
+							<TableHead>Image</TableHead>
+							<TableHead>Description</TableHead>
+							<TableHead>
+								<span className='sr-only'>Actions</span>
+							</TableHead>
+						</TableRow>
+					</TableHeader>
+					<TableBody>
+						{books.map((book, index) => (
+							<TableRow key={index}>
+								<TableCell>{book.title}</TableCell>
+								<TableCell>{book.author}</TableCell>
+								<TableCell>{book.publishedDate.toString()}</TableCell>
+								<TableCell>
+									<ul>
+										{book.genres.map((genre, i) => (
+											<li key={i}>{genre}</li>
+										))}
+									</ul>
+								</TableCell>
+								<TableCell>
+									<a
+										href={book.image}
+										target='_blank'
+										rel='noopener noreferrer'
+									>
+										View Image
+									</a>
+								</TableCell>
+								<TableCell>{book.description || 'N/A'}</TableCell>
+								<TableCell>
+									<DropdownMenu>
+										<DropdownMenuTrigger asChild>
+											<Button aria-haspopup='true' size='icon' variant='ghost'>
+												<MoreHorizontal className='h-4 w-4' />
+												<span className='sr-only'>Toggle menu</span>
+											</Button>
+										</DropdownMenuTrigger>
+										<DropdownMenuContent align='end'>
+											<DropdownMenuLabel>Actions</DropdownMenuLabel>
+											<DropdownMenuItem>Edit</DropdownMenuItem>
+											<DropdownMenuItem>Delete</DropdownMenuItem>
+										</DropdownMenuContent>
+									</DropdownMenu>
+								</TableCell>
+							</TableRow>
+						))}
+					</TableBody>
+				</Table>
 			</div>
 		</section>
 	);
