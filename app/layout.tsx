@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Toaster } from 'react-hot-toast';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { connectToMongoDB } from '@/lib/db';
@@ -23,6 +24,7 @@ export default function RootLayout({
 			<body className={inter.className}>
 				<Navbar />
 				<div>{children}</div>
+				<Toaster />
 				<Footer />
 			</body>
 		</html>
