@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { connectToMongoDB } from '@/lib/db';
 import Library from '@/models/libraryModel';
 import {
@@ -11,11 +10,9 @@ import {
 } from '@/components/ui/table';
 import {
 	DropdownMenu,
-	DropdownMenuCheckboxItem,
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuLabel,
-	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
