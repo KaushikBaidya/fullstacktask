@@ -16,9 +16,9 @@ export default function Home() {
 				</h1>
 				<Forms />
 			</div> */}
-			<div className='flex  flex-col items-center h-1/2 '>
+			{/* <div className='flex  flex-col items-center h-1/2 '>
 				<GetTodos />
-			</div>
+			</div> */}
 		</div>
 	);
 }
