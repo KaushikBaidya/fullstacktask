@@ -40,10 +40,10 @@ const Navbar: React.FC = () => {
 				</div>
 
 				<div className='flex space-x-2'>
-					<button className='bg-black text-white px-4 py-2 rounded-md flex items-center hover:bg-slate-600'>
+					{/* <button className='bg-black text-white px-4 py-2 rounded-md flex items-center hover:bg-slate-600'>
 						<FiLogIn className='mr-2' />
 						Login
-					</button>
+					</button> */}
 					<Link href='addbook'>
 						<button className='bg-black text-white px-4 py-2 rounded-md flex items-center hover:bg-slate-600'>
 							<FiCheckCircle className='mr-2' />
