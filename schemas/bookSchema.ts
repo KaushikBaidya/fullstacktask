@@ -2,6 +2,7 @@ import { z } from "zod";
 
 
 export const bookSchema = z.object({
+  id: z.string().optional(),
   title: z.string().min(1, { message: "Title is required" }),
   author: z.string().min(1, { message: "Author is required" }),
   publishedDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, { message: "Invalid date format" }), 
