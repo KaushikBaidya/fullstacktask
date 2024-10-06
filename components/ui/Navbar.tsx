@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
 					</Link>
 				</div>
 
-				<div className='hidden md:flex flex-1 justify-center'>
+				{/* <div className='hidden md:flex flex-1 justify-center'>
 					<div className='relative w-1/2'>
 						<input
 							type='text'
@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
 						/>
 						<FiSearch className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600' />
 					</div>
-				</div>
+				</div> */}
 
 				<div className='flex space-x-2'>
 					{/* <button className='bg-black text-white px-4 py-2 rounded-md flex items-center hover:bg-slate-600'>
@@ -54,14 +54,14 @@ const Navbar: React.FC = () => {
 			</div>
 
 			{/* Mobile Search Bar */}
-			<div className='md:hidden mt-4 relative'>
+			{/* <div className='md:hidden mt-4 relative'>
 				<input
 					type='text'
 					placeholder='Search...'
 					className='w-full p-2 pl-10 text-black border-2 border-slate-600 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-400'
 				/>
 				<FiSearch className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600' />
-			</div>
+			</div> */}
 		</nav>
 	);
 };

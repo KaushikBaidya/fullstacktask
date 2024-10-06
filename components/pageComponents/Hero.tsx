@@ -50,7 +50,7 @@ export async function Hero() {
 				</div>
 			</div>
 
-			<div className='flex justify-center py-5 mx-auto'>
+			<div className='flex justify-center pt-5 mx-auto'>
 				<Link href='allbooks'>
 					<button className='bg-black text-white px-4 py-2 rounded-md flex items-center hover:bg-slate-600'>
 						<FiCompass className='mr-2' />
