@@ -1,23 +1,15 @@
 'use server';
-import Library from "@/models/libraryModel";
-import { revalidatePath } from "next/cache";
-import { connectToMongoDB } from "./db";
+import Library from '@/models/libraryModel';
+import { connectToMongoDB } from '@/lib/db';
 
-export const deleteBook = async (id: FormData) => {
+export const deleteBook = async (id: string) => {
   await connectToMongoDB();
-  
-  const bookId = id.get("id");
-
   try {
-    // Deleting the book with the specified ID
-    await Library.deleteOne({ _id: bookId });
-    
-    // Revalidate the path where the books are listed
-    revalidatePath("/books");
-
-    return "Book deleted";
+    await Library.findByIdAndDelete(id);
+    return { success: true };
   } catch (error) {
-    console.log(error);
-    return { message: "Error deleting book" };
+    console.error('Error deleting book:', error);
+    return { success: false, message: 'Error deleting book' };
   }
 };
+

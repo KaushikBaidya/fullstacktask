@@ -6,7 +6,6 @@ export const getBooks = async () => {
   await connectToMongoDB();
 
   try {
-    // Fetch all books from the database
     const books = await Library.find({});
     return books;
   } catch (error) {

@@ -8,7 +8,6 @@ const Hero: React.FC = () => {
 	return (
 		<main className='pt-36 md:pt-28'>
 			<section className='container mx-auto flex flex-col md:flex-row items-center justify-center'>
-				{/* Text Section */}
 				<div className='text-center md:text-left md:w-1/2 px-2 md:pl-5 3xl:pl-0'>
 					<h1 className='text-4xl md:text-7xl text-gray-800 font-bold mb-4'>
 						Discover Your Next Favourite Book
@@ -25,14 +24,12 @@ const Hero: React.FC = () => {
 					</div>
 				</div>
 
-				{/* Image Section */}
 				<div className='md:w-1/2 mt-6 md:mt-0 flex justify-center'>
 					<Image
 						src={HeroImage}
-						// layout="responsive" // Makes the image responsive
-						width={600} // Defines aspect ratio (600/500 = 1.2)
+						width={600}
 						height={500}
-						className='hidden md:block w-full h-auto' // Full width with auto height for responsiveness
+						className='hidden md:block w-full h-auto'
 						alt='Libaria'
 					/>
 				</div>
